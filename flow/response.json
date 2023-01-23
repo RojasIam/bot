@@ -1,0 +1,331 @@
+{
+    "DEFAULT":{
+        "replyMessage":[
+            {   "mensaje":[
+                "Hola soy lari bot 🤖👀",
+                "Aun estoy en construcción",
+                "Si desea mas informacion puedes visitar",
+                "https://rojasiam.github.io/Portfoliopersonal/",
+                "adiosin!!",
+                "Prueba escribiendo *aunnada*"
+                ]
+            }
+        ],
+        "actions":{
+            "title":"Probando time,botton and random",
+            "message":"%saludo%\nHoy es %dia_semana%.\nSon las %hora24%:%minutos% hrs.\nSon las %hora12%:%minutos% %ampm%\n*Palabra random:* %rnd_arbol,burro,cabra,dinosaurio,elefante,fuego,gorila%\n*Emoji random:* %rnd_👍🏽,😁,🤣,🤔,🤦🏽‍♂️,🙄,😎%\n*Número random:* %rnd_1,2,3,4,5,6,7%\n",
+            "footer":"Gracias",
+            "buttons":[
+                {"body":"button 1"},
+                {"body":"button 2"},
+                {"body":"button 3"}
+            ]
+        },
+        "media":null,
+        "trigger":null
+    },
+    "ok":{
+        "replyMessage":[
+            {   "mensaje":[
+                " 🐄🐮Muuuuuchas gracias por *CONFIRMAR*"
+                
+                ]
+            }
+        ],
+        "media":"https://d16u9y6cg00afk.cloudfront.net/stickerly_0PKC19_by_stickerly_official_bot/1963411.512.webp",
+        "trigger":null
+    },
+    
+    "doblemensaje":{
+        "replyMessage":[
+            {"mensaje":["Este es un ejemplo del envío de *varios* mensajes con la *misma regla* en el *response.json*"]},
+            {
+                "mensaje":["Este es el *segundo* mensaje.","Contiene dos lineas 🤪"]
+            },
+            {"mensaje":["Este es el *tercer* mensaje, los *tres* van definidos en la *misma regla* del *response.json*"]}
+        ],
+        "media":null,
+        "trigger":null,
+        "goto":"menu"
+    },
+    "menu":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "%saludo% %primer_nombre%, este es el *menú*, selecciona una opción:",
+                    "Pon *1* para ver mensajes anteriores.",
+                    "Pon *2* para ver remplazos.", 
+                    "Pon *3* para pedir nombre (RegExp).",
+                    "Pon *4* para un ejemplo de listas y expresiones regulares.",
+                    "Pon *5* para un ejemplo de botones.",
+                    "Pon *6* para un ejemplo de botones y regExp.",
+                    "Pon *7* para un ejemplo de envío de *tres* mensajes en una *misma* regla."
+                ]
+            }
+        ] ,
+        "media":null,
+        "trigger":null
+    },
+    "opcion1":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "Seleccionaste la *opción 1*",
+                    "*Ultimo mensaje:*",
+                    "%msjant_0%",
+                    "*Penultimo mensaje:*",
+                    "%msjant_1%",
+                    "*Antepenultimo mensaje:*",
+                    "%msjant_2% \n",
+                    "Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."
+                ]
+            }
+        ],
+        "media":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "opcion2":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "Seleccionaste la *opción 2*",
+                    "Remplazamos %saludo.% con *\"%saludo%\"*",
+                    "Remplazamos %dia_semana.% con *\"%dia_semana%\"*",
+                    "Remplazamos %hora24.%:%minutos.% con *\"%hora24%:%minutos%\"*",
+                    "Remplazamos %.rnd_👍🏽,🤞🏼,🤪,🤔% con '%rnd_👍🏽,🤞🏼,🤪,🤔%'\n",
+                    "Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."
+                ]
+            }
+        ],
+        "media":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "opcion3":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "Seleccionaste la *opción 3*\n",
+                    "Por favor dame tu nombre.\n",
+                    "Aquí vamos a aceptar *cualquier* texto, porque en el *initial.json* tenemos keywords : \"*\" (un asterisco en expresiones regulares quiere decir *\"cualquier cosa\"*)",
+                    "Y en *response.json* en la opción correspondiente tenemos \"pasoRequerido\" : \"menu\", que quiere decir que SOLO se va a disparar cuando el paso anterior sea \"menu\"."
+                ]
+            }
+        ],
+        "media":null,
+        "pasoRequerido":"menu"
+    },
+    "recibenombre":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                "Gracias por tu nombre *%msjant_0%*.\n",
+                "Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."
+                ]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "pasoRequerido":"opcion3",
+        "goto":"menu"
+    },
+    "gRevisaCliente":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "/URL=http://localhost:8888/dbrquery?j={\"query\":\"select_revisacliente_GUNA\",\"exec\":\"ExecuteQuery\",\"params\":{\"par1\":\"XXPARAM1XX\"}}"
+                ]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "pasoRequerido":"gallina"
+    },
+    "gGuardainfo":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "/URL=http://localhost:8888/dbrquery?j={\"query\":\"insert_registroGallina_GUNA\",\"exec\":\"ExecuteCommand\",\"params\":{\"par1\":\"XXPARAM1XX\", \"par2\":\"XXPARAM2XX\", \"par3\":\"XXPARAM3XX\", \"par4\":\"XXPARAM4XX\"}}"
+                ]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "pasoRequerido":"gRevisaCliente"
+    },
+    "rnd":{
+        "replyMessage":[
+            {
+                "mensaje":[
+                    "%saludo%",
+                    "Hoy es %dia_semana%.",
+                    "Son las %hora24%:%minutos% hrs.",
+                    "Son las %hora12%:%minutos% %ampm%",
+                    "*Palabra random:* %rnd_arbol,burro,cabra,dinosaurio,elefante,fuego,gorila%",
+                    "*Emoji random:* %rnd_👍🏽,😁,🤣,🤔,🤦🏽‍♂️,🙄,😎%",
+                    "*Número random:* %rnd_1,2,3,4,5,6,7%\n"
+                ]
+            }
+        ],
+        "media":null,
+        "trigger":null
+    },
+    "rnd2":{
+        "replyMessage":[
+            {
+                "mensaje":[""]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "actions":{
+            "title":"¿Que te interesa ver?",
+            "message":"%saludo%\nHoy es %dia_semana%.\nSon las %hora24%:%minutos% hrs.\nSon las %hora12%:%minutos% %ampm%\n*Palabra random:* %rnd_arbol,burro,cabra,dinosaurio,elefante,fuego,gorila%\n*Emoji random:* %rnd_👍🏽,😁,🤣,🤔,🤦🏽‍♂️,🙄,😎%\n*Número random:* %rnd_1,2,3,4,5,6,7%\n",
+            "footer":"Gracias",
+            "buttons":[
+                {"body":"Cursos"},
+                {"body":"Youtube"},
+                {"body":"Telegram"}
+            ]
+        }
+    },
+    "lista":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo%*, este es un ejemplo de listas"]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "actions":{
+            "body":"Hola *%primer_nombre%*, estos son ejemplos del uso de expresiones regulares, *todas* las opciones de la *lista* disparan la misma regla:\n\n'*pak*3*|*pak*angular*|*paquete*3*|*paquete*angular*'\n\nAutomáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 5 sin necesidad de volver a iniciar con */menu*.",
+            "buttonText":"Ver los ejemplos de RegEx",
+            "sections": [
+                {"title":"Selecciona un mensaje:",
+                "rows":[
+                        {"id": "paq3", "title": "Me gusta el paquete 3"},
+                        {"id": "paqA", "title": "Por favor mas info del paquete de Angular"},
+                        {"id": "pakA", "title": "Me gustó el pak de Angular"},
+                        {"id": "pak3", "title": "Estoy interesado en el pak 3"}
+                    ]
+                }
+            ],
+            "title":"Por favor selecciona un producto"
+        },
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "botones":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo%*, este es un ejemplo de botones"]
+            }
+        ],
+        "media":"https://media2.giphy.com/media/VQJu0IeULuAmCwf5SL/giphy.gif",
+        "trigger":null,
+        "actions":{
+            "title":"¿Que te interesa ver %primer_nombre%?",
+            "message":"Recuerda todo este contenido es gratis y estaria genial que me sigas!",
+            "footer":"Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*.",
+            "buttons":[
+                {"body":"Cursos"},
+                {"body":"Youtube"},
+                {"body":"Telegram"}
+            ]
+        },
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "cursos":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *Cursos*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "youtube":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *YouTube*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "telegram":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *Telegram*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "manzana":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *manzana*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "mango":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *mango*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "platano":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste *platano*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "paq3":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo% %primer_nombre%*, seleccionaste el *paquete 3 de Angular*\n","Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 7 sin necesidad de volver a iniciar con */menu*."]
+            }
+        ],
+        "trigger":null,
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    },
+    "botonespaq3":{
+        "replyMessage":[
+            {
+                "mensaje":["*%saludo%*, este es un ejemplo de botones y regExp"]
+            }
+        ],
+        "media":null,
+        "trigger":null,
+        "actions":{
+            "title":"Hola %primer_nombre%, escoge un mensaje:",
+            "message":"Estos son ejemplos del uso de expresiones regulares, *todos* los botones disparan la misma regla:\n\n'*pak*3*|*pak*angular*|*paquete*3*|*paquete*angular*'\n\n",
+            "footer":"Automáticamente el flujo se regresa al *menú*, asi que puedes poner nuevamente un número del 1 al 5 sin necesidad de volver a iniciar con */menu*.",
+            "buttons":[
+                {"body":"Me gusta el paquete 3"},
+                {"body":"Mas info del paquete de Angular"},
+                {"body":"Quiero mas información del pak 3"}
+            ]
+        },
+        "pasoRequerido":"menu",
+        "goto":"menu"
+    }
+}

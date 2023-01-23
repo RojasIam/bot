@@ -1,0 +1,94 @@
+[
+    {
+        "keywords":  [
+            "xmuchas gracias",
+            "xgracias",
+            "xvale gracias"
+        ],
+        "key": "Gracias"
+    },
+    {
+        "keywords": ["ok"],
+        "key": "ok"
+    },
+    {
+        "keywords": ["/menu"],
+        "key": "menu"
+    },
+    {
+        "keywords": ["1"],
+        "key": "opcion1"
+    },
+    {
+        "keywords": ["2"],
+        "key": "opcion2"
+    },
+    {
+        "keywords":  ["3"],
+        "key": "opcion3"
+    },
+    {
+        "keywords": "*",
+        "key": "recibenombre"
+    },
+    {
+        "keywords": "*",
+        "key": "gRevisaCliente"
+    },
+    {
+        "keywords": "*",
+        "key": "gGuardainfo"
+    },
+    {
+        "keywords": ["rnd"],
+        "key": "rnd"
+    },
+    {
+        "keywords": ["rnd2"],
+        "key": "rnd2"
+    },
+    {
+        "keywords": ["4"],
+        "key": "lista"
+    },
+    {
+        "keywords": ["5"],
+        "key": "botones"
+    },
+    {
+        "keywords": ["6"],
+        "key": "botonespaq3"
+    },
+    {
+        "keywords": "7|*doble*mensaje*",
+        "key": "doblemensaje"
+    },
+    {
+        "keywords": ["cursos"],
+        "key": "cursos"
+    },
+    {
+        "keywords": ["youtube"],
+        "key": "youtube"
+    },
+    {
+        "keywords": ["telegram"],
+        "key": "telegram"
+    },
+    {
+        "keywords": ["manzana"],
+        "key": "manzana"
+    },
+    {
+        "keywords": ["mango"],
+        "key": "mango"
+    },
+    {
+        "keywords": ["platano"],
+        "key": "platano"
+    },
+    {
+        "keywords": "*pak*3*|*pak*angular*|*paquete*3*|*paquete*angular*",
+        "key": "paq3"
+    }
+]
